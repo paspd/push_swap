@@ -53,8 +53,8 @@ void	sort_second_quarter(t_struct *data)
 	while (data->list_b->rank > data->list_a->rank)
 	{
 		i++;
-		while (check_is_in_second_quarter_rank(data->list_b->next->rank, data) && \
-			data->list_b->next->rank > ft_lstlast(data->list_a)->rank && \
+		while (check_is_in_second_quarter_rank(data->list_b->next->rank, data) \
+			&& data->list_b->next->rank > ft_lstlast(data->list_a)->rank && \
 				data->list_b->next->rank < data->list_a->rank)
 		{
 			ft_putstr(sb(data));
@@ -72,8 +72,9 @@ void	second_while_of_first_quarter(t_struct *data)
 	while (data->list_b->rank > ft_lstlast(data->list_a)->rank && \
 		data->list_b->rank < data->list_a->rank)
 		ft_putstr(pa(data));
-	while (data->nb_b > 1 && data->list_b->next->rank > ft_lstlast(data->list_a)->rank && \
-		data->list_b->next->rank < data->list_a->rank)
+	while (data->nb_b > 1 && \
+		data->list_b->next->rank > ft_lstlast(data->list_a)->rank && \
+			data->list_b->next->rank < data->list_a->rank)
 	{
 		ft_putstr(sb(data));
 		ft_putstr(pa(data));

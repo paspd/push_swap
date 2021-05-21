@@ -14,6 +14,7 @@ SRCS			=	srcs/check_1.c \
 					srcs/ranksort_1.c \
 					srcs/ranksort_2.c \
 					srcs/ranksort_3.c \
+					srcs/bestsort.c \
 					srcs/utilis.c
 
 OBJS			= $(SRCS:.c=.o)

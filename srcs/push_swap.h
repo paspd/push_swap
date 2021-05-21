@@ -52,6 +52,8 @@ typedef struct s_struct
 	int			nb_ra;
 	int			nb_rra;
 	int			max_rank;
+	int			div;
+	int			pack;
 }				t_struct;
 
 ////////////////////////
@@ -138,6 +140,11 @@ void	second_while_of_first_quarter(t_struct *data);
 void	sort_second_quarter(t_struct *data);
 void	second_while_of_second_quarter(t_struct *data);
 void	move_n_sort_first_half(t_struct *data);
+
+///////////////////////
+/////  BESTSORT.C  ////
+///////////////////////
+void	bestsort(t_struct *data);
 
 /////////////////////
 /////  RANDOM.C  ////
