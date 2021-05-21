@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: leodauga <leodauga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldauga <ldauga@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 16:20:53 by ldauga            #+#    #+#             */
-/*   Updated: 2021/04/22 14:41:41 by leodauga         ###   ########.fr       */
+/*   Updated: 2021/05/21 11:21:51 by ldauga           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstadd_back(t_list **list, int valeur)
 {
-	t_list *new;
-	t_list *tmp;
+	t_list	*new;
+	t_list	*tmp;
 
 	new = malloc(sizeof(*new));
 	if (new == NULL)

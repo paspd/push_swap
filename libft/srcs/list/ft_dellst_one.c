@@ -1,15 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dellst_one.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldauga <ldauga@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/21 11:16:21 by ldauga            #+#    #+#             */
+/*   Updated: 2021/05/21 11:20:22 by ldauga           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/libft.h"
 
 void	ft_dellst_one(t_list **list, int i)
 {
 	t_list	*tmp;
 	t_list	*ptmp;
-    int     limit;
+	int		limit;
 
-    limit = 1;
+	limit = 1;
 	if (*list == NULL)
-		return ;
-	if (ft_lstsize(*list) < i)
 		return ;
 	if ((*list)->next == NULL)
 	{
@@ -19,11 +29,10 @@ void	ft_dellst_one(t_list **list, int i)
 	}
 	tmp = *list;
 	ptmp = *list;
-	while (limit != i && tmp->next != NULL)
+	while (limit++ != i && tmp->next != NULL)
 	{
 		ptmp = tmp;
 		tmp = tmp->next;
-		limit++;
 	}
 	ptmp->next = tmp->next;
 	if (tmp->next == NULL)

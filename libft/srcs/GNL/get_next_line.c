@@ -1,8 +1,8 @@
 #include "../../incs/libft.h"
 
-int		have_return(char *save)
+int	have_return(char *save)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!save)
@@ -67,7 +67,7 @@ char	*get_new_save(char **save, int fd)
 	return (temp);
 }
 
-int		get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*save[4096];
 	char			buff[1 + 1];
