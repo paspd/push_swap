@@ -1,7 +1,20 @@
-SRCS			=	srcs/push_swap.c srcs/ft_fill_lst.c \
-					srcs/move_1.c srcs/move_2.c \
-					srcs/move_3.c srcs/ft_sort.c \
-					srcs/utils_lst.c srcs/ft_sort_int.c
+SRCS			=	srcs/check_1.c \
+					srcs/check_2.c \
+					srcs/check_half_rank.c \
+					srcs/check_is_in_quarter_rank.c \
+					srcs/check_is_quarter_list.c \
+					srcs/fill_list.c \
+					srcs/move.c \
+					srcs/move_2.c \
+					srcs/move_3.c \
+					srcs/not_rank_sort.c \
+					srcs/push_swap.c \
+					srcs/random_norme.c \
+					srcs/rank_list.c \
+					srcs/ranksort_1.c \
+					srcs/ranksort_2.c \
+					srcs/ranksort_3.c \
+					srcs/utilis.c
 
 OBJS			= $(SRCS:.c=.o)
 
@@ -11,7 +24,7 @@ CFLAGS			= -Wall -Wextra -Werror -I.
 
 NAME			= push_swap
 
-LIBFT			= srcs/libft/libft.a
+LIBFT			= libft/libft.a
 
 all:			$(NAME)
 
@@ -20,16 +33,14 @@ $(NAME):		compilation $(OBJS)
 				@echo "PUSH_SWAP COMPILED"
 
 compilation:
-				@make -C srcs/libft
+				@make -C libft
 
 clean:
-				@make clean -C srcs/libft
-				$(RM) $(OBJS)
-				@echo "CLEAN"
+				@make clean -C libft
+				@$(RM) $(OBJS)
 
 fclean:			clean
-				@make fclean -C srcs/libft
-				$(RM) $(NAME)
-				@echo "VERY CLEAN"
+				@make fclean -C libft
+				@$(RM) $(NAME)
 
 re:				fclean $(NAME)

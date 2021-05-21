@@ -92,6 +92,7 @@ int		check_is_tiny(t_struct *data, int value);
 int		check_tiny(t_list *list);
 int		check_index_tiny(t_list *list);
 int		check_ra_rra_rank_inf(t_list *list, t_struct *data, int div);
+int		check_large(t_list *list);
 
 ///////////////////////
 ////  RANK_LIST.C  ////

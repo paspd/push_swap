@@ -34,6 +34,23 @@ int	check_tiny(t_list *list)
 	return (smallest);
 }
 
+//Return le plus petit int de la list
+int	check_large(t_list *list)
+{
+	int	largest;
+
+	largest = list->content;
+	while (list->next != NULL)
+	{
+		if (list->content > largest)
+			largest = list->content;
+		list = list->next;
+	}
+	if (list->content > largest)
+		largest = list->content;
+	return (largest);
+}
+
 //Return l'index du plus petit int de la list
 int	check_index_tiny(t_list *list)
 {

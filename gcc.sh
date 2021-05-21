@@ -1,1 +1,0 @@
-gcc -g -Werror -Wall -Wextra srcs/*.c libft/libft.a -D BUFFER_SIZE=1 -o push_swap
