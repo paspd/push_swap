@@ -2,29 +2,29 @@
 
 void	fill_list(t_struct *d, char **av)
 {
-	d->fl.i = 1;
-	d->fl.neg = 1;
-	while (av[d->fl.i])
+	long int	temp;
+
+	d->fl.i = 0;
+	while (av[++d->fl.i])
 	{
 		d->fl.j = 0;
-		d->fl.temp = 0;
 		while (av[d->fl.i][d->fl.j])
 		{
+			temp = 0;
+			d->fl.neg = 1;
+			while (!ft_ischar("0123456789-", av[d->fl.i][d->fl.j]))
+				d->fl.j++;
 			if (av[d->fl.i][d->fl.j] == '-')
 				d->fl.neg *= -1;
 			if (av[d->fl.i][d->fl.j] == '-')
 				d->fl.j++;
-			while (ft_isdigit(av[d->fl.i][d->fl.j]))
-				d->fl.temp = d->fl.temp * 10 + (av[d->fl.i][d->fl.j++] - 48);
-			while (!ft_isdigit(av[d->fl.i][d->fl.j]) \
-				&& av[d->fl.i][d->fl.j] != '-' && av[d->fl.i][d->fl.j])
-				d->fl.j++;
-			ft_lstadd_back(&d->list_a, d->fl.temp * d->fl.neg);
-			d->fl.temp = 0;
-			d->fl.neg = 1;
-			d->nb_int++;
+			while (ft_ischar("0123456789", av[d->fl.i][d->fl.j]))
+				temp = temp * 10 + (av[d->fl.i][d->fl.j++] - 48);
+			if (temp < -2147483648 || temp > 2147483647)
+				error(d);
+			ft_lstadd_back(&d->list_a, (int)(temp * d->fl.neg));
+			d->nb_a++;
 		}
-		d->fl.i++;
 	}
-	d->nb_a = d->nb_int;
+	d->nb_int = d->nb_a;
 }

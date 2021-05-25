@@ -32,7 +32,6 @@ int	main(int ac, char *av[])
 	data.sort_tab = find_sort(data.list_a, &data);
 	rank_list(data.sort_tab, data.list_a, &data);
 	start_sort(&data);
-	while (1);
 	clean_data(&data);
 	return (0);
 }

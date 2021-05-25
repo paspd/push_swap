@@ -8,6 +8,7 @@ void	clean_data(t_struct *data)
 {
 	ft_lstclear(&data->list_a);
 	ft_lstclear(&data->list_b);
+	exit (0);
 }
 
 /////////////////////////////
